@@ -1,0 +1,24 @@
+# Copy into .github/workflows/ in a standalone simdiff checkout.
+# Replace the fixture arguments with the pre/post-conversion models or snapshots
+# produced by your own build. The unchanged fixture demonstrates a passing gate.
+name: Robot model semantics
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install .
+      - name: Compare selected semantics
+        run: simdiff fixtures/good.xml fixtures/good.xml --format json --fail-on breaking > simdiff-report.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: simdiff-report
+          path: simdiff-report.json
+          if-no-files-found: warn

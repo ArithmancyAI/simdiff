@@ -1,0 +1,67 @@
+<mujoco model="simdiff_synthetic">
+  <compiler angle="radian"/>
+  <worldbody>
+    <geom name="floor" type="plane" size="1 1 0.1"/>
+    <body name="payload" pos="0 0 0.025">
+      <freejoint name="payload_joint"/>
+      <inertial pos="0 0 0" mass="0.01" diaginertia="1e-7 1e-7 1e-7"/>
+      <geom name="payload_geom" type="box" size="0.01 0.01 0.01"/>
+    </body>
+    <body name="link_0" pos="0.0 0.2 0.1">
+      <joint name="joint_0" type="slide" axis="0 0 1"/>
+      <inertial pos="0 0 0" mass="0.1" diaginertia="0.001 0.001 0.001"/>
+      <geom name="link_geom_0" type="box" size="0.01 0.01 0.01" contype="0" conaffinity="0"/>
+    </body>
+    <body name="link_1" pos="0.1 0.2 0.1">
+      <joint name="joint_1" type="slide" axis="0 0 1"/>
+      <inertial pos="0 0 0" mass="0.1" diaginertia="0.001 0.001 0.001"/>
+      <geom name="link_geom_1" type="box" size="0.01 0.01 0.01" contype="0" conaffinity="0"/>
+    </body>
+    <body name="link_2" pos="0.2 0.2 0.1">
+      <joint name="joint_2" type="slide" axis="0 0 1"/>
+      <inertial pos="0 0 0" mass="0.1" diaginertia="0.001 0.001 0.001"/>
+      <geom name="link_geom_2" type="box" size="0.01 0.01 0.01" contype="0" conaffinity="0"/>
+    </body>
+    <body name="link_3" pos="0.3 0.2 0.1">
+      <joint name="joint_3" type="slide" axis="0 0 1"/>
+      <inertial pos="0 0 0" mass="0.1" diaginertia="0.001 0.001 0.001"/>
+      <geom name="link_geom_3" type="box" size="0.01 0.01 0.01" contype="0" conaffinity="0"/>
+    </body>
+    <body name="link_4" pos="0.4 0.2 0.1">
+      <joint name="joint_4" type="slide" axis="0 0 1"/>
+      <inertial pos="0 0 0" mass="0.1" diaginertia="0.001 0.001 0.001"/>
+      <geom name="link_geom_4" type="box" size="0.01 0.01 0.01" contype="0" conaffinity="0"/>
+    </body>
+    <body name="link_5" pos="0.5 0.2 0.1">
+      <joint name="joint_5" type="slide" axis="0 0 1"/>
+      <inertial pos="0 0 0" mass="0.1" diaginertia="0.001 0.001 0.001"/>
+      <geom name="link_geom_5" type="box" size="0.01 0.01 0.01" contype="0" conaffinity="0"/>
+    </body>
+    <body name="link_6" pos="0.6 0.2 0.1">
+      <joint name="joint_6" type="slide" axis="0 0 1"/>
+      <inertial pos="0 0 0" mass="0.1" diaginertia="0.001 0.001 0.001"/>
+      <geom name="link_geom_6" type="box" size="0.01 0.01 0.01" contype="0" conaffinity="0"/>
+    </body>
+    <body name="link_7" pos="0.7 0.2 0.1">
+      <joint name="joint_7" type="slide" axis="0 0 1"/>
+      <inertial pos="0 0 0" mass="0.1" diaginertia="0.001 0.001 0.001"/>
+      <geom name="link_geom_7" type="box" size="0.01 0.01 0.01" contype="0" conaffinity="0"/>
+    </body>
+    <body name="link_8" pos="0.8 0.2 0.1">
+      <joint name="joint_8" type="slide" axis="0 0 1"/>
+      <inertial pos="0 0 0" mass="0.1" diaginertia="0.001 0.001 0.001"/>
+      <geom name="link_geom_8" type="box" size="0.01 0.01 0.01" contype="0" conaffinity="0"/>
+    </body>
+  </worldbody>
+  <actuator>
+    <general name="drive_0" joint="joint_0" dyntype="none" dynprm="0.25"/>
+    <general name="drive_1" joint="joint_1" dyntype="none" dynprm="0.25"/>
+    <general name="drive_2" joint="joint_2" dyntype="none" dynprm="0.25"/>
+    <general name="drive_3" joint="joint_3" dyntype="none" dynprm="0.25"/>
+    <general name="drive_4" joint="joint_4" dyntype="none" dynprm="0.25"/>
+    <general name="drive_5" joint="joint_5" dyntype="none" dynprm="0.25"/>
+    <general name="drive_6" joint="joint_6" dyntype="none" dynprm="0.25"/>
+    <general name="drive_7" joint="joint_7" dyntype="none" dynprm="0.25"/>
+    <general name="drive_8" joint="joint_8" dyntype="none" dynprm="0.25"/>
+  </actuator>
+</mujoco>

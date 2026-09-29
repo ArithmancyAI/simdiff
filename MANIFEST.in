@@ -1,4 +1,5 @@
 include uv.lock
+include CONTRIBUTING.md CHANGELOG.md
 recursive-include fixtures *.xml *.py
 recursive-include examples *.py *.yml
 recursive-include docs *.md

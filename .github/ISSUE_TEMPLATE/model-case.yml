@@ -1,0 +1,59 @@
+name: Model case or failed run
+description: Share a useful finding, clean report, false positive or blocked comparison.
+title: "[Model case] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Tell us what happened when you tried simdiff on your own models.
+        No model upload is required. Share only files you can redistribute;
+        reports may contain model names, paths and physical properties.
+        For a private conversation, email mustafa@arithmancy.ai.
+  - type: dropdown
+    id: outcome
+    attributes:
+      label: What happened?
+      options:
+        - Found a useful change
+        - Completed with no unexpected findings
+        - Reported a change I think is a false positive
+        - Missed a change I expected it to find
+        - Could not complete the comparison
+    validations:
+      required: true
+  - type: textarea
+    id: workflow
+    attributes:
+      label: What were you converting or comparing?
+      description: Source and target formats/engines, how you converted, and which changes were intentional.
+      placeholder: "Example: source MJCF versus a captured host MuJoCo model after an importer ran."
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Versions and environment
+      description: OS, Python, simdiff, MuJoCo and converter/target-engine versions, if known.
+      placeholder: "Use simdiff --version, python --version and python -m pip show mujoco."
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command and exit code
+      description: Paste the command you ran and its exit code, if available. Redact paths as needed.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Actual result and what you expected
+      description: Include the relevant finding, error or redacted JSON report. Explain why the result helped or blocked you.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Small reproduction (optional)
+      description: Attach or link a minimal model pair and needed assets only if you can share them. A description alone is welcome.

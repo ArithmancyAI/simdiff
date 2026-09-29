@@ -4,9 +4,13 @@ The build is capped at two weeks. v0's engineering gate is that the three
 mutations produce their documented severities, unchanged/equivalent fixtures
 pass, and the installation + README examples run end to end.
 
-Before a public launch, verify package-name availability, run CI on the supported
-platforms, and replace the local blog-draft link with the public post. Only this
-standalone repository is in scope; Project-X's private assets are excluded.
+Launch the public GitHub repository first and use it in direct engineering/sales
+outreach, then Hacker News; Product Hunt can follow. The README must let a new user
+clone, install, compare the fixtures and interpret the output without assistance.
+The hosted CI must pass for the revision being shared. Publish the worked example
+alongside the release. Only this standalone repository is in scope; Project-X's
+private assets are excluded. Verify package-name availability before a separate
+PyPI release; installation from the repository supports the GitHub-first launch.
 
 Preserve the brief's additional publication gate: establish whether the historical
 68.7 mm discrepancy comes from conversion/configuration drift or engine physics,

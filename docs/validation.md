@@ -65,9 +65,13 @@ The workflow at [`.github/workflows/simdiff.yml`](../.github/workflows/simdiff.y
 - Locked lint/format checks, source distribution and wheel builds, and an
   installed-wheel CLI/snapshot/runtime-example check outside the source tree.
 
-Local macOS checks and an actual Linux ARM64 Docker run provide evidence before
-push. They do not establish that the GitHub-hosted Linux x86_64/macOS matrix has
-passed: the first hosted run is still required before public publication. Windows,
-Python 3.14+, MuJoCo 3.15+, GPU runtime verification and tendon actuators are outside
-this beta's declared support. Independent user trials are still needed to measure
-usefulness and false-positive rates in external workflows.
+The [first hosted CI run](https://github.com/ArithmancyAI/simdiff/actions/runs/36238770439)
+passed all 14 jobs for commit `27182f6` on 26 September 2026: all 12 compatibility
+combinations, the minimum-dependency job and the distribution job. This complements
+the local macOS and Linux ARM64 Docker checks above. See the
+[current CI runs](https://github.com/ArithmancyAI/simdiff/actions/workflows/simdiff.yml)
+for later commits; a pass applies to the revision actually tested.
+
+Windows, Python 3.14+, MuJoCo 3.15+, GPU runtime verification and tendon actuators
+are outside this beta's declared support. Independent user trials are still needed
+to measure usefulness and false-positive rates in external workflows.
